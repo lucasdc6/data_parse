@@ -20,11 +20,6 @@ O instalando manualmente de la siguiente manera:
     $ gem install data_parse
 
 
-## Aclaraciones
-
-Dentro de la gema, se cuenta con la extensión de la clase Sting, agregando la función to_underscore, que tiene un comportamiento similar al del método underscore de rails.
-Cualquier consulta o corrección, no dude en escribir a cualquiera de mis mails.
-
 ## License
 
 La gema está disponible como código libre bajo los términos de la [MIT License](http://opensource.org/licenses/MIT).
