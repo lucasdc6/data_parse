@@ -1,7 +1,7 @@
 # DataParse
 
 DataParse es una gema para parseo de la informacion contenidos en determinado formato, provenientes de archivos de un tipo especificado.
-Por defecto, se cuenta con el tipo de archivo Zip, y el formato utilizado en un proyecto especifico, utilizando la gema ActiveSupport, para un proyecto Rails.
+Por defecto, se cuenta con el tipo de archivo Zip, y la posibilidad de subclasificar FileFormat para determinar como tratar los archivos descomprimidos.
 
 ## Instalación
 
@@ -19,54 +19,6 @@ O instalando manualmente de la siguiente manera:
 
     $ gem install data_parse
 
-## Uso
-
-Se cuenta con la clase Factory para facilitar la instanciación del objeto necesario.
-Se puede utilizar de la siguiente forma
-
-```ruby
-DataParse::Factory::cyt_projects_zip(path_to_file)
-```
-
-De esta manera se instancia un objeto, que comprendera los siguientes mensajes:
-
-- make_dir: Utilizado para especificar el directorio de salida (por defecto sera el directorio ./tmp)
-- remove_dir: Elimina el directorio anteriormente creado, junto con todos los archivos tratados
-- extract_file: Extrae los archivos a parsear
-- parse: Ejecula la logica de parseo sobre los archivos
-- valid?: Comprueba la validez del archivo a extraer
-
-## Extensión
-
-Es posible realizar una extensión de la gema agregando tanto nuevos tipos de archivos (tar, gzip, 7zip, rar, etc), como también agregando nuevos formatos de archivos.
-Toda la logica de parseo se debe implementar bajo el mensaje parse(file), y subclasificando la clase FileFormat.
-También es posible implementar el mensaje validate para proveer un modo de validar el archivo.
-
-Toda subclasificacion es automaticamente agregada al factory para su uso, mediante un método que cumple el siguiente formato:
-
-nombre de la sublcase de FileFormat(en snake case) + nombre del tipo de archivo
-Ej:
-
-Si se crea el tipo de archivo tar y el formato nuevo proyecto:
-
-```ruby
-module DataParse
-    class Tar < DataType
-    ...
-    end
-    
-    class NuevoProyecto < DataFormat
-    ...
-    end
-end
-```
-
-En este caso se contaran con los nuevos métodos: 
-- nuevo_proyecto_tar(path_to_file)
-- nuevo_proyecto_zip(path_to_file)
-
-Cabe destacar que el formato por defecto tambien va a contar con el nuevo tipo de archivo, tar, generando el método
-- cyt_project_tar(path)
 
 ## Aclaraciones
 
