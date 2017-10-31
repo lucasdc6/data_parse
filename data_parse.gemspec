@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Lucas Di Cunzolo"]
   spec.email         = ["ldicunzolo@cespi.unlp.edu.ar"]
 
-  spec.summary       = %q{Projects parser for cyt}
-  spec.description   = %q{Parse a list of projects in csv format}
+  spec.summary       = %q{A simple parser for zipped csv files}
+  spec.description   = %q{Parse zipped csv files}
   spec.homepage      = ""
   spec.license       = "MIT"
 
