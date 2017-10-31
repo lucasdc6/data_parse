@@ -10,7 +10,7 @@ module DataParse
           zip_file.extract(file, file_path) unless File.exist?(file_path)
         end
       end
-      @processed = true
+      @extracted = true
     end
 
     def valid?
