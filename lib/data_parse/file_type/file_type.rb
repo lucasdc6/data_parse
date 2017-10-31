@@ -26,7 +26,7 @@ module DataParse
     end
 
     def parse
-      @format.parse(@destination) if @extracted
+      @format.parse(@destination) if @processed
     end
   end
 end
