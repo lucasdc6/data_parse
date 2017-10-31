@@ -8,10 +8,10 @@ module DataParse
     # Los nombres se encuentran especificados en el método validate en formato de array
     # Por convension, se llama al método parse + nombre del archivo
     # Si se desea cambiar esto, se puede redefinir este método
-    def parse(destination = nil)
+    def parse(destination)
       raise FileIsNil if destination.nil?
       @destination = destination
-      beafore
+      before
       validate.each do |file|
         file = File.basename(file,File.extname(file))
         method = "parse_#{file}".to_sym
@@ -21,7 +21,7 @@ module DataParse
     end
 
     # Todo lo que se requiera hacer antes de iniciar el parseo de la información
-    def beafore;end
+    def before;end
 
     # Todo lo que se requiera hacer al terminar el parseo de la información
     def after;end
