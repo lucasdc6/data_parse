@@ -4,9 +4,27 @@ module DataParse
       ObjectSpace.each_object(Class).select { |klass| klass < self }
     end
 
-    def parse
-      raise 'Implemented by Subclass'
+    # Recibo el destino donde se encuentran todos los archivios a parsear
+    # Los nombres se encuentran especificados en el método validate en formato de array
+    # Por convension, se llama al método parse + nombre del archivo
+    # Si se desea cambiar esto, se puede redefinir este método
+    def parse(destination = nil)
+      raise FileIsNil if destination.nil?
+      @destination = destination
+      beafore
+      validate.each do |file|
+        file = File.basename(file,File.extname(file))
+        method = "parse_#{file}".to_sym
+        self.send method
+      end
+      after
     end
+
+    # Todo lo que se requiera hacer antes de iniciar el parseo de la información
+    def beafore;end
+
+    # Todo lo que se requiera hacer al terminar el parseo de la información
+    def after;end
 
     def validate
       raise 'Implemented by Subclass'
