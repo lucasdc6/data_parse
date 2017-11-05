@@ -4,4 +4,10 @@ module DataParse
       super msg
     end
   end
+
+  class ParseInterrup < StandardError
+    def initialize(msg = "Parse interrupted")
+      super msg
+    end
+  end
 end
