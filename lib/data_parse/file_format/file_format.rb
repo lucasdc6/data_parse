@@ -18,6 +18,8 @@ module DataParse
         self.send method
       end
       after
+    rescue ParseInterrup
+      parse_rescue
     end
 
     # Todo lo que se requiera hacer antes de iniciar el parseo de la información
@@ -25,6 +27,11 @@ module DataParse
 
     # Todo lo que se requiera hacer al terminar el parseo de la información
     def after;end
+
+    # Que hacer cuando se lanza la excepcion ParseInterrup
+    def parse_rescue
+      raise
+    end
 
     def validate
       raise 'Implemented by Subclass'
