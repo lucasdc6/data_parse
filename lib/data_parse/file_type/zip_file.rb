@@ -14,7 +14,7 @@ module DataParse
     end
 
     def valid?
-      Zip::File.open(@file).entries.collect { |file| file.name }.sort == @format.validate
+      Zip::File.open(@file).entries.collect { |file| file.name }.sort == @format.validate.sort
     end
 
   end
