@@ -26,4 +26,4 @@ La gema está disponible como código libre bajo los términos de la [MIT Licens
 
 ## Code of Conduct
 
-Everyone interacting in the DataParse project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/data_parse/blob/master/CODE_OF_CONDUCT.md).
+Cualquiera que quiera contribuir puede leer el [code of conduct](https://github.com/lucasdc6/data_parse/blob/master/CODE_OF_CONDUCT.md) (en ingles)
