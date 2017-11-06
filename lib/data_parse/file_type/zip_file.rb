@@ -3,7 +3,7 @@ require 'zip'
 module DataParse
   class ZipFile < FileType
     def extract_file
-      raise 'Invalid Format' if !self.valid?
+      raise InvalidFormat if !self.valid?
       Zip::File.open(@file) do |zip_file|
         zip_file.each do | file |
           file_path = File.join(@destination, file.name)
