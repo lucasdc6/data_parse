@@ -18,7 +18,7 @@ module DataParse
         self.send method
       end
       after
-    rescue ParseInterrupt
+    rescue StandardError
       parse_rescue
     end
 
