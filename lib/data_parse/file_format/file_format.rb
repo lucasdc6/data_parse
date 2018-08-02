@@ -34,7 +34,7 @@ module DataParse
     end
 
     def validate
-      raise 'Implemented by Subclass'
+      raise SubClassResponsability
     end
 
   end

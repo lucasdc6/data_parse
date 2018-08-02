@@ -16,4 +16,10 @@ module DataParse
       super msg
     end
   end
+
+  class SubClassResponsability
+    def initialize(msg = "The subclass must be define this method")
+      super msg
+    end
+  end
 end
